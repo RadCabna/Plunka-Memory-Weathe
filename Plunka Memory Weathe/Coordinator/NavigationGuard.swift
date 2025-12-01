@@ -1,8 +1,13 @@
-//
-//  NavigationGuard.swift
-//  Plunka Memory Weathe
-//
-//  Created by Алкександр Степанов on 27.11.2025.
-//
-
 import Foundation
+
+
+enum AvailableScreens {
+    case LOADING
+    case ONBOARDING
+    case MAIN
+}
+
+class NavGuard: ObservableObject {
+    @Published var currentScreen: AvailableScreens = .LOADING
+    static var shared: NavGuard = .init()
+}
