@@ -18,6 +18,7 @@ struct Loading: View {
                 Text("Loading...")
                     .font(.custom("Poppins-SemiBold", size: screenHeight * 0.028))
                     .foregroundColor(Color("text_1Color"))
+                    .padding(.bottom)
             }
         }
     }

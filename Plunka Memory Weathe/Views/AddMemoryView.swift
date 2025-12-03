@@ -7,6 +7,8 @@
 
 import SwiftUI
 import PhotosUI
+import AVFoundation
+import Photos
 
 extension UIColor {
     convenience init(_ color: Color) {
@@ -189,12 +191,10 @@ struct AddMemoryView: View {
         }
         .alert("Choose Photo Source", isPresented: $showSourceTypeAlert) {
             Button("Camera") {
-                imageSourceType = .camera
-                showImagePicker = true
+                requestCameraPermission()
             }
             Button("Photo Library") {
-                imageSourceType = .photoLibrary
-                showImagePicker = true
+                requestPhotoLibraryPermission()
             }
             Button("Cancel", role: .cancel) { }
         } message: {
@@ -207,6 +207,36 @@ struct AddMemoryView: View {
             Button("OK", role: .cancel) { }
         } message: {
             Text(validationMessage)
+        }
+    }
+    
+    // MARK: - Permission Functions
+    private func requestCameraPermission() {
+        AVCaptureDevice.requestAccess(for: .video) { granted in
+            DispatchQueue.main.async {
+                if granted {
+                    imageSourceType = .camera
+                    showImagePicker = true
+                } else {
+                    validationMessage = "Camera access denied. Please enable in Settings."
+                    showValidationAlert = true
+                }
+            }
+        }
+    }
+    
+    private func requestPhotoLibraryPermission() {
+        PHPhotoLibrary.requestAuthorization(for: .readWrite) { status in
+            DispatchQueue.main.async {
+                switch status {
+                case .authorized, .limited:
+                    imageSourceType = .photoLibrary
+                    showImagePicker = true
+                default:
+                    validationMessage = "Photo Library access denied. Please enable in Settings."
+                    showValidationAlert = true
+                }
+            }
         }
     }
     
