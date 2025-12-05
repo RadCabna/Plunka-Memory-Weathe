@@ -254,6 +254,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Plunka Memory Weathe/Plunka_Memory_Weathe.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TJC4VDAK2F;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Plunka-Memory-Weathe-Info.plist";
@@ -275,7 +276,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 15.4;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.umemoryweath.wrld;
+				PRODUCT_BUNDLE_IDENTIFIER = com.umemoryweath.wrld1;
 				PRODUCT_NAME = "Your Memory Weather";
 				REGISTER_APP_GROUPS = YES;
 				SDKROOT = auto;
@@ -296,6 +297,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Plunka Memory Weathe/Plunka_Memory_Weathe.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TJC4VDAK2F;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Plunka-Memory-Weathe-Info.plist";
@@ -317,7 +319,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 15.4;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.umemoryweath.wrld;
+				PRODUCT_BUNDLE_IDENTIFIER = com.umemoryweath.wrld1;
 				PRODUCT_NAME = "Your Memory Weather";
 				REGISTER_APP_GROUPS = YES;
 				SDKROOT = auto;

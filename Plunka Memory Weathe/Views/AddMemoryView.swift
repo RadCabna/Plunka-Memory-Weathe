@@ -56,7 +56,8 @@ struct AddMemoryView: View {
                 .resizable()
                 .ignoresSafeArea()
             
-            VStack(spacing: screenHeight * 0.002) {
+            ScrollView {
+                VStack(spacing: screenHeight * 0.002) {
                     // Back button
                     HStack {
                         Button(action: {
@@ -67,9 +68,12 @@ struct AddMemoryView: View {
                                 .scaledToFit()
                                 .frame(width: screenWidth * 0.3)
                         }
+                        .buttonStyle(PlainButtonStyle())
+                        .contentShape(Rectangle())
                         Spacer()
                     }
                     .padding(.horizontal, screenWidth * 0.05)
+                    .padding(.top, screenHeight * 0.02)
                     .padding(.bottom, screenHeight * 0.02)
                     
                     // Photo frame
@@ -186,8 +190,12 @@ struct AddMemoryView: View {
                             .opacity((selectedImage != nil && selectedWeather != nil) ? 1.0 : 0.5)
                     }
                     .disabled(selectedImage == nil || selectedWeather == nil)
-                    .padding(.bottom, screenHeight * 0.02)
+                    .padding(.bottom, screenHeight * 0.05)
+                }
             }
+        }
+        .onTapGesture {
+            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
         }
         .alert("Choose Photo Source", isPresented: $showSourceTypeAlert) {
             Button("Camera") {
